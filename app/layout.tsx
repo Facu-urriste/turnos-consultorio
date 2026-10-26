@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { consultorioPublico } from "@/app/lib/consultorioPublico";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Turnos - Consultorio Odontológico",
+  title: `Turnos - ${consultorioPublico.nombreConsultorio}`,
   description: "Reservá tu turno online de forma simple y rápida.",
 };
 
