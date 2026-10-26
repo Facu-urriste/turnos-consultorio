@@ -21,6 +21,7 @@ export interface ConfigConsultorio {
   anticipacionMinimaReservaHoras: number;
   anticipacionMinimaCancelacionHoras: number;
   horizonteReservaSemanas: number;
+  limiteReservasFuturasPorTelefono: number;
   horarios: Record<DiaSemana, Corte[]>;
   prestaciones: Prestacion[];
 }
