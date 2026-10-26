@@ -1,5 +1,7 @@
 # Turnos del consultorio
 
+> Primera vez acá: leé el [reporte final](docs/reporte-final.md) — qué se hizo, qué decisiones se tomaron y por qué, qué queda pendiente, el resultado de las pruebas y cómo probarlo paso a paso.
+
 Página de reserva de turnos online para un consultorio odontológico. El paciente entra desde el celular, ve los horarios libres y se anota solo — sin intercambiar mensajes con el profesional. La disponibilidad se calcula siempre en vivo contra un calendario de Google Calendar dedicado: cualquier evento en ese calendario (cargado por la web o a mano por el profesional) bloquea el horario.
 
 No hay base de datos propia: los únicos datos del paciente que se guardan viven en el evento de Google Calendar.
