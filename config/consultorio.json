@@ -1,0 +1,27 @@
+{
+  "zonaHoraria": "America/Argentina/Buenos_Aires",
+  "profesional": {
+    "nombre": "Dr. Nombre Apellido"
+  },
+  "consultorio": {
+    "nombre": "Consultorio Odontológico",
+    "direccion": "Calle Falsa 123, CABA",
+    "telefono": "+54 9 11 1234-5678"
+  },
+  "duracionTurnoMinutos": 30,
+  "anticipacionMinimaReservaHoras": 2,
+  "anticipacionMinimaCancelacionHoras": 2,
+  "horizonteReservaSemanas": 4,
+  "horarios": {
+    "lunes": [{ "inicio": "09:00", "fin": "13:00" }, { "inicio": "15:00", "fin": "19:00" }],
+    "martes": [{ "inicio": "09:00", "fin": "13:00" }, { "inicio": "15:00", "fin": "19:00" }],
+    "miercoles": [{ "inicio": "09:00", "fin": "13:00" }, { "inicio": "15:00", "fin": "19:00" }],
+    "jueves": [{ "inicio": "09:00", "fin": "13:00" }, { "inicio": "15:00", "fin": "19:00" }],
+    "viernes": [{ "inicio": "09:00", "fin": "13:00" }],
+    "sabado": [],
+    "domingo": []
+  },
+  "prestaciones": [
+    { "id": "general", "nombre": "Consulta general", "duracionMinutos": 30 }
+  ]
+}
