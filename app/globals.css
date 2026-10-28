@@ -15,17 +15,17 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-nunito);
 
-  /* Paleta cálida (terracota) usada para botones y acentos en toda la app. */
-  --color-primary-50: #fdf4ee;
-  --color-primary-100: #fbe5d6;
-  --color-primary-200: #f5c7a8;
-  --color-primary-300: #eca274;
-  --color-primary-400: #df7d4c;
-  --color-primary-500: #ce6134;
-  --color-primary-600: #ad4c27;
-  --color-primary-700: #8a3d22;
-  --color-primary-800: #6e3220;
-  --color-primary-900: #5a2b1e;
+  /* Paleta cálida (verde salvia) usada para botones y acentos en toda la app. */
+  --color-primary-50: #f3f6ee;
+  --color-primary-100: #e4ebd8;
+  --color-primary-200: #c9d8b3;
+  --color-primary-300: #abc08a;
+  --color-primary-400: #8ba667;
+  --color-primary-500: #708c4e;
+  --color-primary-600: #5a7140;
+  --color-primary-700: #475934;
+  --color-primary-800: #3a482c;
+  --color-primary-900: #303b25;
 }
 
 body {
