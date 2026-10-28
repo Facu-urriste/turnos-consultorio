@@ -26,6 +26,8 @@
 
 # configuracion local de herramientas de desarrollo (Claude Code)
 .claude/
+.dev-out.log
+.dev-err.log
 
 # debug
 npm-debug.log*
