@@ -52,7 +52,7 @@ export default function Home() {
 
         {paso.tipo === "cancelado" && (
           <div className="flex flex-col items-center gap-6 py-10 text-center">
-            <p className="text-xl font-semibold text-zinc-900">Tu turno fue cancelado.</p>
+            <p className="text-xl font-semibold text-stone-900">Tu turno fue cancelado.</p>
             <button type="button" onClick={() => setPaso({ tipo: "calendario" })} className={claseBotonPrimario}>
               Sacar un nuevo turno
             </button>

@@ -7,8 +7,8 @@ interface Props {
 export default function Encabezado({ subtitulo }: Props) {
   return (
     <header className="mb-6 text-center">
-      <h1 className="text-2xl font-bold text-zinc-900">{consultorioPublico.nombreConsultorio}</h1>
-      {subtitulo && <p className="mt-1 text-base text-zinc-500">{subtitulo}</p>}
+      <h1 className="text-2xl font-bold text-stone-900">{consultorioPublico.nombreConsultorio}</h1>
+      {subtitulo && <p className="mt-1 text-base text-stone-500">{subtitulo}</p>}
     </header>
   );
 }

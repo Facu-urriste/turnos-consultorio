@@ -31,14 +31,14 @@ export default function PantallaConfirmacion({ turno, onCancelado }: Props) {
 
   return (
     <div className="flex flex-col gap-6">
-      <p className="text-center text-2xl font-semibold text-teal-700">¡Turno confirmado!</p>
+      <p className="text-center text-2xl font-semibold text-primary-700">¡Turno confirmado!</p>
 
       <DetalleTurno inicioISO={turno.inicioISO} />
 
       <BotonesAgregarCalendario token={turno.token} inicioISO={turno.inicioISO} finISO={turno.finISO} />
 
-      <div className="rounded-xl bg-zinc-50 p-4">
-        <p className="text-base text-zinc-700">Si necesitás cancelar, volvé a entrar a este link.</p>
+      <div className="rounded-xl bg-stone-50 p-4">
+        <p className="text-base text-stone-700">Si necesitás cancelar, volvé a entrar a este link.</p>
         {urlTurno && <BotonesCompartir url={urlTurno} texto="Mi turno" />}
       </div>
 
@@ -49,7 +49,7 @@ export default function PantallaConfirmacion({ turno, onCancelado }: Props) {
         onCancelado={onCancelado}
       />
 
-      <p className="text-center text-sm text-zinc-500">
+      <p className="text-center text-sm text-stone-500">
         También podés llamarnos al{" "}
         <a href={`tel:${consultorioPublico.telefonoHref}`} className="font-semibold underline">
           {consultorioPublico.telefono}

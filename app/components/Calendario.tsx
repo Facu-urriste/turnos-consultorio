@@ -56,29 +56,29 @@ export default function Calendario({ onSeleccionarDia }: Props) {
           aria-label="Mes anterior"
           onClick={() => setMes((m) => sumarMeses(m, -1))}
           disabled={!puedeRetroceder}
-          className="rounded-full p-3 text-2xl text-zinc-600 disabled:opacity-25"
+          className="rounded-full p-3 text-2xl text-stone-600 disabled:opacity-25"
         >
           ‹
         </button>
-        <p className="text-lg font-semibold capitalize text-zinc-900">{nombreMesAnio(mes)}</p>
+        <p className="text-lg font-semibold capitalize text-stone-900">{nombreMesAnio(mes)}</p>
         <button
           type="button"
           aria-label="Mes siguiente"
           onClick={() => setMes((m) => sumarMeses(m, 1))}
-          className="rounded-full p-3 text-2xl text-zinc-600"
+          className="rounded-full p-3 text-2xl text-stone-600"
         >
           ›
         </button>
       </div>
 
-      <div className="grid grid-cols-7 gap-1 text-center text-sm font-medium text-zinc-400">
+      <div className="grid grid-cols-7 gap-1 text-center text-sm font-medium text-stone-400">
         {DIAS_CORTOS.map((letra, i) => (
           <div key={i}>{letra}</div>
         ))}
       </div>
 
       {cargando ? (
-        <p className="py-10 text-center text-base text-zinc-500">Buscando días disponibles...</p>
+        <p className="py-10 text-center text-base text-stone-500">Buscando días disponibles...</p>
       ) : error ? (
         <p className="py-10 text-center text-base text-red-600">
           No pudimos cargar el calendario. Probá de nuevo más tarde.
@@ -98,8 +98,8 @@ export default function Calendario({ onSeleccionarDia }: Props) {
                   onClick={() => onSeleccionarDia(celda.fecha)}
                   className={
                     disponible
-                      ? "aspect-square rounded-xl bg-teal-600 text-base font-semibold text-white transition active:scale-95 hover:bg-teal-700"
-                      : "aspect-square rounded-xl text-base text-zinc-300"
+                      ? "aspect-square rounded-xl bg-primary-600 text-base font-semibold text-white transition active:scale-95 hover:bg-primary-700"
+                      : "aspect-square rounded-xl text-base text-stone-300"
                   }
                 >
                   {celda.numero}
@@ -108,7 +108,7 @@ export default function Calendario({ onSeleccionarDia }: Props) {
             })}
           </div>
           {!hayDisponibleEsteMes && (
-            <p className="mt-6 text-center text-base text-zinc-500">
+            <p className="mt-6 text-center text-base text-stone-500">
               No hay turnos disponibles este mes. Probá el mes que viene.
             </p>
           )}

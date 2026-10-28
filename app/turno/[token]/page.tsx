@@ -61,7 +61,7 @@ export default function TurnoPage() {
 
   function calcularContenido() {
     if (cargando) {
-      return <p className="py-16 text-center text-lg text-zinc-600">Buscando tu turno...</p>;
+      return <p className="py-16 text-center text-lg text-stone-600">Buscando tu turno...</p>;
     }
 
     if (error || !consulta) {
@@ -106,11 +106,11 @@ export default function TurnoPage() {
 function MensajeConBoton({ texto, textoBoton = "Sacar un turno" }: { texto: string; textoBoton?: string }) {
   return (
     <div className="flex flex-col items-center gap-6 py-10 text-center">
-      <p className="text-lg text-zinc-700">{texto}</p>
+      <p className="text-lg text-stone-700">{texto}</p>
       <Link href="/" className={claseBotonPrimario}>
         {textoBoton}
       </Link>
-      <p className="text-sm text-zinc-500">
+      <p className="text-sm text-stone-500">
         O llamanos al{" "}
         <a href={`tel:${consultorioPublico.telefonoHref}`} className="font-semibold underline">
           {consultorioPublico.telefono}

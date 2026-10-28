@@ -27,7 +27,7 @@ export default function ModalConfirmarCancelacion({
       aria-labelledby="titulo-modal-cancelar"
     >
       <div className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
-        <p id="titulo-modal-cancelar" className="mb-6 text-lg text-zinc-900">
+        <p id="titulo-modal-cancelar" className="mb-6 text-lg text-stone-900">
           ¿Seguro que querés cancelar el turno {descripcionTurno}?
         </p>
         <div className="flex flex-col gap-3">

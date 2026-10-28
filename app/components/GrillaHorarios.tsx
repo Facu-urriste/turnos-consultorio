@@ -42,13 +42,13 @@ export default function GrillaHorarios({ fecha, onSeleccionarHora, onVolver }: P
 
   return (
     <div>
-      <button type="button" onClick={onVolver} className="mb-4 text-base font-semibold text-teal-700">
+      <button type="button" onClick={onVolver} className="mb-4 text-base font-semibold text-primary-700">
         ‹ Volver al calendario
       </button>
-      <h2 className="mb-5 text-xl font-semibold capitalize text-zinc-900">{formatFechaLarga(fecha)}</h2>
+      <h2 className="mb-5 text-xl font-semibold capitalize text-stone-900">{formatFechaLarga(fecha)}</h2>
 
       {cargando ? (
-        <p className="py-10 text-center text-base text-zinc-500">Buscando horarios...</p>
+        <p className="py-10 text-center text-base text-stone-500">Buscando horarios...</p>
       ) : error ? (
         <p className="py-10 text-center text-base text-red-600">
           No pudimos cargar los horarios. Probá de nuevo.
@@ -60,14 +60,14 @@ export default function GrillaHorarios({ fecha, onSeleccionarHora, onVolver }: P
               key={hora}
               type="button"
               onClick={() => onSeleccionarHora(hora)}
-              className="rounded-xl border-2 border-teal-600 py-4 text-lg font-semibold text-teal-700 transition active:scale-95 hover:bg-teal-50"
+              className="rounded-xl border-2 border-primary-600 py-4 text-lg font-semibold text-primary-700 transition active:scale-95 hover:bg-primary-50"
             >
               {hora}
             </button>
           ))}
         </div>
       ) : (
-        <p className="py-10 text-center text-base text-zinc-600">
+        <p className="py-10 text-center text-base text-stone-600">
           No quedan horarios este día, probá otro día.
         </p>
       )}

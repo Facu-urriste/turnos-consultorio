@@ -18,7 +18,7 @@ export default function BotonesAgregarCalendario({ token, inicioISO, finISO }: P
 
   return (
     <div>
-      <p className="mb-2 text-base font-medium text-zinc-700">Agregalo a tu calendario</p>
+      <p className="mb-2 text-base font-medium text-stone-700">Agregalo a tu calendario</p>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <a href={urlIcs} className={claseBotonSecundario}>
           Agregar a mi calendario

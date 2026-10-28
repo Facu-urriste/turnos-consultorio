@@ -14,13 +14,13 @@
   "horizonteReservaSemanas": 4,
   "limiteReservasFuturasPorTelefono": 3,
   "horarios": {
-    "lunes": [{ "inicio": "09:00", "fin": "13:00" }, { "inicio": "15:00", "fin": "19:00" }],
-    "martes": [{ "inicio": "09:00", "fin": "13:00" }, { "inicio": "15:00", "fin": "19:00" }],
-    "miercoles": [{ "inicio": "09:00", "fin": "13:00" }, { "inicio": "15:00", "fin": "19:00" }],
-    "jueves": [{ "inicio": "09:00", "fin": "13:00" }, { "inicio": "15:00", "fin": "19:00" }],
-    "viernes": [{ "inicio": "09:00", "fin": "13:00" }],
-    "sabado": [],
-    "domingo": []
+    "lunes": [{ "inicio": "08:00", "fin": "20:00" }],
+    "martes": [{ "inicio": "08:00", "fin": "20:00" }],
+    "miercoles": [{ "inicio": "08:00", "fin": "20:00" }],
+    "jueves": [{ "inicio": "08:00", "fin": "20:00" }],
+    "viernes": [{ "inicio": "08:00", "fin": "20:00" }],
+    "sabado": [{ "inicio": "08:00", "fin": "20:00" }],
+    "domingo": [{ "inicio": "08:00", "fin": "20:00" }]
   },
   "prestaciones": [
     { "id": "general", "nombre": "Consulta general", "duracionMinutos": 30 }

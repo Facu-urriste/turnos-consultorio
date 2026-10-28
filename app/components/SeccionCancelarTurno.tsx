@@ -36,7 +36,7 @@ export default function SeccionCancelarTurno({ token, descripcionTurno, puedeCan
 
   if (!puedeCancelar) {
     return (
-      <div className="rounded-xl bg-zinc-100 p-4 text-base text-zinc-700">
+      <div className="rounded-xl bg-stone-100 p-4 text-base text-stone-700">
         <p>Ya no se puede cancelar este turno por acá.</p>
         <p className="mt-1">
           Si necesitás hacer un cambio, llamanos al{" "}

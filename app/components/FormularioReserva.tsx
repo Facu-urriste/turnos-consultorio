@@ -92,15 +92,15 @@ export default function FormularioReserva({ fecha, hora, onReservado, onSlotToma
 
   return (
     <div>
-      <button type="button" onClick={onVolver} className="mb-4 text-base font-semibold text-teal-700">
+      <button type="button" onClick={onVolver} className="mb-4 text-base font-semibold text-primary-700">
         ‹ Volver a los horarios
       </button>
-      <h2 className="mb-1 text-xl font-semibold capitalize text-zinc-900">{formatFechaLarga(fecha)}</h2>
-      <p className="mb-6 text-lg text-zinc-700">Turno a las {hora} hs</p>
+      <h2 className="mb-1 text-xl font-semibold capitalize text-stone-900">{formatFechaLarga(fecha)}</h2>
+      <p className="mb-6 text-lg text-stone-700">Turno a las {hora} hs</p>
 
       <form onSubmit={manejarEnvio} className="space-y-5" noValidate>
         <div>
-          <label htmlFor="nombre" className="mb-1 block text-base font-medium text-zinc-800">
+          <label htmlFor="nombre" className="mb-1 block text-base font-medium text-stone-800">
             Nombre y apellido
           </label>
           <input
@@ -110,13 +110,13 @@ export default function FormularioReserva({ fecha, hora, onReservado, onSlotToma
             autoComplete="name"
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
-            className="w-full rounded-xl border border-zinc-300 px-4 py-3 text-lg text-zinc-900 focus:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-200"
+            className="w-full rounded-xl border border-stone-300 px-4 py-3 text-lg text-stone-900 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-200"
           />
           {errorNombre && <p className="mt-1 text-sm text-red-600">{errorNombre}</p>}
         </div>
 
         <div>
-          <label htmlFor="telefono" className="mb-1 block text-base font-medium text-zinc-800">
+          <label htmlFor="telefono" className="mb-1 block text-base font-medium text-stone-800">
             Teléfono
           </label>
           <input
@@ -128,14 +128,14 @@ export default function FormularioReserva({ fecha, hora, onReservado, onSlotToma
             placeholder="Ej: 11 1234-5678"
             value={telefono}
             onChange={(e) => setTelefono(e.target.value)}
-            className="w-full rounded-xl border border-zinc-300 px-4 py-3 text-lg text-zinc-900 focus:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-200"
+            className="w-full rounded-xl border border-stone-300 px-4 py-3 text-lg text-stone-900 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-200"
           />
-          <p className="mt-1 text-sm text-zinc-500">Podés escribirlo con o sin 0, 15 o +54.</p>
+          <p className="mt-1 text-sm text-stone-500">Podés escribirlo con o sin 0, 15 o +54.</p>
           {errorTelefono && <p className="mt-1 text-sm text-red-600">{errorTelefono}</p>}
         </div>
 
         <div>
-          <label htmlFor="mensaje" className="mb-1 block text-base font-medium text-zinc-800">
+          <label htmlFor="mensaje" className="mb-1 block text-base font-medium text-stone-800">
             Mensaje para el profesional (opcional)
           </label>
           <textarea
@@ -146,9 +146,9 @@ export default function FormularioReserva({ fecha, hora, onReservado, onSlotToma
             value={mensaje}
             onChange={(e) => setMensaje(e.target.value)}
             placeholder="Opcional: contale brevemente el motivo"
-            className="w-full resize-none rounded-xl border border-zinc-300 px-4 py-3 text-base text-zinc-900 focus:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-200"
+            className="w-full resize-none rounded-xl border border-stone-300 px-4 py-3 text-base text-stone-900 focus:border-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-200"
           />
-          <p className="mt-1 text-right text-sm text-zinc-400">
+          <p className="mt-1 text-right text-sm text-stone-400">
             {mensaje.length}/{MAX_MENSAJE}
           </p>
         </div>
@@ -176,7 +176,7 @@ export default function FormularioReserva({ fecha, hora, onReservado, onSlotToma
           {enviando ? "Confirmando..." : "Confirmar turno"}
         </button>
 
-        <p className="text-center text-sm text-zinc-500">
+        <p className="text-center text-sm text-stone-500">
           Tus datos los ve solo {consultorioPublico.nombreProfesional} para organizar tu turno.{" "}
           <Link href="/privacidad" className="underline">
             Más información

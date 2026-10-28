@@ -12,7 +12,7 @@ export default function PrivacidadPage() {
     <>
       <Encabezado subtitulo="Política de privacidad" />
       <main className="flex-1">
-        <div className="space-y-4 text-base leading-relaxed text-zinc-700">
+        <div className="space-y-4 text-base leading-relaxed text-stone-700">
           <p>
             Para reservar un turno te pedimos tu nombre, tu teléfono y, si querés, un mensaje
             breve contándole el motivo de la consulta a {consultorioPublico.nombreProfesional}.
@@ -40,7 +40,7 @@ export default function PrivacidadPage() {
           </p>
         </div>
 
-        <Link href="/" className="mt-8 block text-center text-base font-semibold text-teal-700 underline">
+        <Link href="/" className="mt-8 block text-center text-base font-semibold text-primary-700 underline">
           Volver al inicio
         </Link>
       </main>
