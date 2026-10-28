@@ -25,8 +25,9 @@ Proyecto completo: página de reserva de turnos (Next.js + TypeScript, mobile-fi
 1. ~~Falta la cuenta de Google real~~ **Resuelto el 28/10.** Ya está conectada tu cuenta de prueba (`turnos-web@turnos-consultorio-513022.iam.gserviceaccount.com`, calendario "Turnos consultorio"), con `.env.local` completo. Cuando quieran pasar a producción con la cuenta definitiva del profesional, se repiten los mismos pasos de la sección 1 del README y se actualiza `.env.local` (o las variables de entorno en Vercel).
 2. ~~Riesgo sin verificar: reactivar un horario recién cancelado~~ **Verificado el 28/10 contra la API real**: reservé un turno de prueba, lo cancelé, y volví a reservar exactamente el mismo horario (29/10 9:00) — funcionó al toque (201), confirmando que Calendar sí permite reactivar el evento cancelado con el mismo id. El mecanismo de no-dobles-reservas queda validado de punta a punta, no solo contra mocks.
 3. **Confirmado (no solo teórico) el 28/10**: si alguien vuelve a abrir el link personal de un turno ya cancelado, ve "No encontramos este turno" en vez de un mensaje específico de "este turno fue cancelado" — lo probé en vivo y es el comportamiento real. La cancelación en sí funciona perfecto (libera el horario), es solo el mensaje el que no distingue "cancelado" de "el link nunca existió". Sigue siendo una mejora opcional, no un bug que bloquee nada: lo dejaría para más adelante si en algún momento quieren pulirlo.
-4. **Todavía no se subió a GitHub ni se desplegó a Vercel** — son los dos únicos pasos que, por política, tenés que hacer vos (crear cuentas): están detallados paso a paso en la sección 5 del README.
+4. ~~Falta subir a GitHub y desplegar en Vercel~~ **Resuelto el 28/10.** Código en [github.com/Facu-urriste/turnos-consultorio](https://github.com/Facu-urriste/turnos-consultorio), desplegado en **[turnos-consultorio-two.vercel.app](https://turnos-consultorio-two.vercel.app)**. Verificado con una reserva y cancelación real en producción (no solo local). Único tropiezo: al pegar la clave privada a mano en el formulario de Vercel se corrompió (error `DECODER routines::unsupported` en los logs) — se solucionó re-pegando el valor completo desde un archivo de texto plano en vez de seleccionarlo a mano de un mensaje de chat.
 5. **Tipos de prestación con duraciones distintas**: la estructura está preparada en `config/consultorio.json` (`prestaciones`) pero, como pedía el encargo, no está implementada en la interfaz todavía.
+6. **Rate limiting por IP (Upstash) no configurado todavía** — quedó como estaba: opcional, se puede sumar cuando quieran sin tocar código (sección 6 del README).
 
 ## Resultado de las pruebas
 
@@ -43,21 +44,20 @@ Además: `npx tsc --noEmit`, `npm run lint` y `npm run build` sin errores. Revis
 
 ## Cómo probarlo vos mismo, paso a paso
 
-**Ahora mismo, sin cuenta de Google todavía** (para ver el diseño y los mensajes de error):
+**La forma más rápida: ya está en vivo.** Entrá a **[turnos-consultorio-two.vercel.app](https://turnos-consultorio-two.vercel.app)** desde el celular y reservá un turno real — se refleja al instante en el Google Calendar "Turnos consultorio". Cada `git push` a `master` vuelve a desplegar solo.
+
+**Para correrlo en tu computadora** (por ejemplo, para seguir desarrollando):
 
 ```bash
 npm run dev
 ```
 
-Abrí [http://localhost:3000](http://localhost:3000) y achicá la ventana del navegador a un ancho de celular (o abrilo desde el celular si están en la misma red). Vas a ver el calendario, pero con un mensaje de "No pudimos cargar el calendario" — es esperado, porque todavía no hay credenciales de Google conectadas. Las páginas `/privacidad` y `/turno/cualquier-cosa` (va a decir "no encontrado") sí se pueden ver completas ya mismo.
+Abrí [http://localhost:3000](http://localhost:3000). El `.env.local` local ya tiene las credenciales de prueba cargadas, así que el calendario funciona igual que en producción.
 
-**Para probar el flujo real de punta a punta:**
+**Para pasar a la cuenta definitiva del profesional** (hoy está conectada tu cuenta de prueba):
 
-1. Seguí la sección 1 del [README](../README.md) (cuenta de Google, calendario dedicado, service account) — son los únicos pasos que tenés que hacer vos.
-2. Copiá `.env.example` a `.env.local` y completá las variables con lo que te dio Google.
-3. `npm run dev` de nuevo y reservá un turno de prueba desde el celular, como lo haría un paciente.
-4. Revisá que el evento aparezca en el calendario "Turnos consultorio" en Google Calendar, con el teléfono y el mensaje en la descripción.
-5. Probá cancelar ese turno desde el link personal, y confirmá que el evento desaparece del calendario y el horario vuelve a estar libre en la web.
-6. Cuando quieras, seguí la sección 5 del README para subir el proyecto a GitHub y desplegarlo en Vercel.
+1. Repetí la sección 1 del [README](../README.md) con la cuenta de Gmail real del consultorio (nuevo proyecto de Google Cloud, service account, calendario dedicado).
+2. Actualizá `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` y `GOOGLE_CALENDAR_ID` en **Vercel → Settings → Environment Variables** (y opcionalmente en tu `.env.local` si seguís desarrollando).
+3. Redeploy en Vercel para que tome los cambios.
 
 Cualquier cosa que quieras ajustar (horarios, duración del turno, datos del consultorio) se edita en `config/consultorio.json`, sin tocar código — ver sección 2 del README.
